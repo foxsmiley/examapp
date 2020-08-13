@@ -1,0 +1,43 @@
+<div class="left-sidebar">
+  <div class="scroll-sidebar">
+    <br>
+    <br>
+    <li class="main">
+      <a [routerLink]="['/home/dashboard']">
+        <i class="icon-home"></i>
+        <span>Dashboard </span>
+      </a>
+    </li>
+    <!-- <li class="nav-label">Tasks</li> -->
+
+    <div class="wrap-collapsible">
+      <input id="enrollment" class="toggle" type="checkbox">
+      <label for="enrollment" class="lbl-toggle">Examination Management</label>
+      <div class="collapsible-content">
+          <li>
+              <a [routerLink]="['/home/examination/take-exam']" routerLinkActive="active-link">Take Examination</a>
+          </li>
+        <li>
+          <a [routerLink]="['/home/examination/set-questions']" routerLinkActive="active-link">Set Examination</a>
+        </li>
+        <li>
+          <a [routerLink]="['/home/examination/examination-records']" routerLinkActive="active-link">Examination Record</a>
+        </li>
+      </div>
+    </div>
+
+    <div class="wrap-collapsible">
+      <input id="provider" class="toggle" type="checkbox">
+      <label for="provider" class="lbl-toggle">User Management</label>
+      <div class="collapsible-content">
+        <li>
+          <a [routerLink]="['/home/user-management/dashboard']" routerLinkActive="active-link">Student Exam Records</a>
+        </li>
+        <li>
+          <a [routerLink]="['/home/user-management/users']" routerLinkActive="active-link">Users</a>
+        </li>
+      </div>
+    </div>
+
+  </div>
+</div>

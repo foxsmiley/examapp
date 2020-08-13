@@ -1,0 +1,37 @@
+<div class="border border-light p-5">
+  <p class="text-center h4 mb-4">Capture Exam Question</p>
+  <div *ngIf="start">
+    
+    <label>Question</label>
+    <input type="text" class="form-control mb-4" [(ngModel)]="question.description" placeholder="Enter Question description">
+    <div class="validation">
+      <span *ngIf="validation1.isValid(question)" class="error">{{validation.getError()}}</span>
+      <button mdbBtn color="unique" class="my-2 col-6" (click)="nextInput()" [disabled]="validation.isValid(question)">next
+      </button>
+    </div>
+  </div>
+   
+    <div *ngIf="next && !this.stop">
+    <label>Possible Solutions</label>
+    <input type="text" class="form-control mb-4" [(ngModel)]="solution.description" placeholder="Enter Possible solution">
+    <div class="validation">
+      <span *ngIf="validation1.isValid(solution)" class="error">{{validation.getError()}}</span>
+      <button mdbBtn color="unique" class="my-2 col-6" (click)="submitSolution()" [disabled]="validation.isValid(solution)">next
+      </button>
+    </div>
+    </div>
+   <div *ngIf= "next && this.stop">
+    <label>Answer</label>
+    <select type="text" class="form-control mb-4" [(ngModel)]="question.solutionId">
+    <option value='' disabled>Select Answer</option>
+    <option *ngFor="let answer of solutions" [value]="answer.id">{{answer.description}}</option>
+    </select>
+    <div class="validation">
+      <span *ngIf="validation2.isValid(question)" class="error">{{validation.getError()}}</span>
+      <button mdbBtn color="unique" class="my-2 col-6" (click)="submit()" [disabled]="validation2.isValid(question)">Submit
+      </button>
+    </div>
+   </div>
+    
+   
+  </div>

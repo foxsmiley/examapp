@@ -1,0 +1,30 @@
+<div class="header">
+  <nav class="navbar top-navbar navbar-expand-md navbar-light">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <h5 style="color:white">Online Examination Application</h5>
+      </a>
+    </div>
+
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-md-0"></ul>
+      <ul class="navbar-nav my-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted  " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="../../../assets/images/users/5.jpg" alt="user" class="profile-pic" />
+            <span class="username"> {{username}}</span>
+          </a>
+         
+          <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+            <ul class="dropdown-user">
+              <li>
+                <a (click)="signOut()">
+                  <i class="fa fa-sign-out"></i> Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

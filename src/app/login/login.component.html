@@ -1,0 +1,50 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+     <form class="login100-form validate-form flex-sb flex-w">
+        <span class="login100-form-title p-b-32">
+          Account Login
+        </span>
+        <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+        <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+        
+
+        <span class="txt1 p-b-11">
+          Username
+        </span>
+        <div class="wrap-input100 validate-input m-b-30">
+          <input type="text" class="input100 " id="username" [(ngModel)]="username" placeholder="Enter User Name"
+            name="username">
+          <span class="focus-input100"></span>
+        </div>
+
+
+        <span class="txt1 p-b-11">
+          Password
+        </span>
+        <div class="wrap-input100 validate-input m-b-30">
+          <input type="password" class="input100 " [(ngModel)]="password" id="password" placeholder="Enter password"
+            name="password">
+
+          <span class="focus-input100"></span>
+        </div>
+        <div class=container-login100-form-btn m-b-12>
+           <button (click)=handleLogin() class="login100-form-btn">Login</button>
+        </div>
+       
+
+         <div class="flex-sb-m w-full p-b-48">
+          <div>
+            <a routerLink="../register" class="txt3">
+              New User?Sign up?
+            </a>
+          </div>
+         </div>
+      </form>
+    </div>
+  </div>
+</div> 
+
+
+       
+ 

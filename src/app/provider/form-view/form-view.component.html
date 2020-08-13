@@ -1,0 +1,36 @@
+<br />
+<div class="card">
+  <div class="card-body">
+    <div style="color: #757575;">
+      <h5 class="text-right" *ngIf="title">{{title}}</h5>
+      <br *ngIf="title" />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let head of headers"><b>{{head.Display}}</b> :
+          <span *ngIf="head.DataType == 0">{{form[head.Name]}}</span>
+          <span *ngIf="head.DataType == 1">{{form[head.Name] | date : 'dd-MMM-yyyy'}}</span>
+          <span *ngIf="head.DataType == 2" title="{{form[head.Name][head.SubName]}}">{{form[head.Name][head.SubName]}}</span>
+          <span style="font-size:2em;" *ngIf="head.DataType == 3">
+            <i class="fa" [ngClass]="{'green-text fa-check': form[head.Name], 'red-text fa-times': !form[head.Name]}"></i>
+          </span>
+          <span *ngIf="head.DataType == 4">
+            <i class="fa" [ngClass]="{'green-text fa-check': form[head.Name], 'red-text fa-times': !form[head.Name]}">
+              {{&nbsp;form[head.SubName]}}
+            </i>
+          </span>
+          <img *ngIf="head.DataType == 5" src="{{form[head.Name]}}" class="col-6 offset-3" width="100" />
+        </li>
+      </ul>
+      <br />
+      <div class="btn-group float-right" role="group" *ngIf="buttons">
+        <button mdbBtn type="button" color="info" (click)="onedit()" rounded="true" outline="true" class="waves-light fa fa-edit"
+          mdbWavesEffect>edit</button>
+        <button mdbBtn type="button" (click)="ondelete()" color="danger" rounded="true" outline="true" class="waves-light fa fa-trash"
+          mdbWavesEffect>delete</button>
+      </div>
+      <button *ngIf="action" class="cyan darken-4 btn float-right" mdbWavesEffect (click)="oncustomBtn()"
+        mdbWavesEffect>
+        {{action.title}}
+      </button>
+    </div>
+  </div>
+</div>

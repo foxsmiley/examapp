@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="border border-light p-2 mt-4">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width]="(step/10 * 100) +'%'" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <br>
+        <app-question-one *ngIf="step == 0" [examResponse]="examResponse" (result)="loadResult($event)"></app-question-one>
+        <app-question-two *ngIf="step == 1" [examResponse]="examResponse" [examQuestions]="examQuestions"(result)="loadResult($event)"></app-question-two>
+        <app-question-three *ngIf="step == 2" [examResponse]="examResponse"[examQuestions]="examQuestions"  (result)="loadResult($event)"></app-question-three>
+        <app-question-four *ngIf="step == 3" [examResponse]="examResponse" [examQuestions]="examQuestions" (result)="loadResult($event)"></app-question-four>  
+        <app-confirm-information *ngIf="step == 4"  [examResponse]="examResponse"></app-confirm-information>
+    </div>
+</div>
